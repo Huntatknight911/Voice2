@@ -17,8 +17,8 @@ def extract_features(audio_file):
     # Extract audio features using librosa
     try:
         X, sample_rate = librosa.load(audio_file, res_type='kaiser_fast')
-        mfccs = np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=40).T
-        chroma = np.mean(librosa.feature.chroma_stft(y=X, sr=sample_rate).T
+        mfccs = np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=40).T)
+        chroma = np.mean(librosa.feature.chroma_stft(y=X, sr=sample_rate).T)
         mel = np.mean(librosa.feature.melspectrogram(y=X, sr=sample_rate).T)
         contrast = np.mean(librosa.feature.spectral_contrast(y=X, sr=sample_rate).T)
         tonnetz = np.mean(librosa.feature.tonnetz(y=X, sr=sample_rate).T)
